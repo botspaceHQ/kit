@@ -1,0 +1,14 @@
+{
+  "note": "Asset uploads already stored in the BotSpace Kit Design System artifact. build-ds.ts copies these records into the index.",
+  "groups": ["Logos"],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "m",
+      "order": ["botspace-logo-white.svg"],
+      "files": {
+        "botspace-logo-white.svg": { "name": "botspace-logo-white.svg", "blob": "f4d3ec6b5869dcf379e7d248c8b0ad52", "size": 840, "type": "image/svg+xml" }
+      }
+    }
+  }
+}

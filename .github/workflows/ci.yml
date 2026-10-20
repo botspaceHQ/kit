@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # Type check, registry, reference site, design-system export, npm package.
+      - run: npm run build
+      # A clean Vite app installs the packed package, imports the styles and builds.
+      - run: node scripts/consumer-test.ts

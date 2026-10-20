@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "segmented",
+  "title": "Segmented control",
+  "description": "A full-width pill track with a tonal selected segment, for narrow panes.",
+  "registryDependencies": [
+    "@botspace/theme"
+  ],
+  "files": [
+    {
+      "path": "src/components/kit/segmented.tsx",
+      "content": "import { cn } from \"@/lib/utils\"\n\n/** BotSpace kit: Material 3 style segmented control (pill track, tonal selected segment). */\nexport function SegmentedControl({\n  value,\n  onChange,\n  options,\n  className,\n}: {\n  value: string\n  onChange: (v: string) => void\n  options: { value: string; label: string; count?: number }[]\n  className?: string\n}) {\n  return (\n    <div\n      role=\"tablist\"\n      className={cn(\"flex w-full rounded-full bg-accent p-1\", className)}\n    >\n      {options.map((o) => {\n        const active = o.value === value\n        return (\n          <button\n            key={o.value}\n            type=\"button\"\n            role=\"tab\"\n            aria-selected={active}\n            onClick={() => onChange(o.value)}\n            className={cn(\n              \"flex h-7 flex-1 items-center justify-center gap-1.5 rounded-full px-3 text-[13px] font-medium whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/40 focus-visible:outline-none\",\n              active && \"bg-card text-foreground shadow-sm\"\n            )}\n          >\n            {o.label}\n            {o.count !== undefined && (\n              <span className={cn(\"text-xs tabular-nums\", active ? \"text-muted-foreground\" : \"opacity-70\")}>\n                {o.count}\n              </span>\n            )}\n          </button>\n        )\n      })}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/kit/segmented.tsx"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0"
+  },
+  "type": "registry:component"
+}

@@ -1,0 +1,12 @@
+/* Stylesheet of the design-system bundle (components/bundle.css).
+   The page writes the token values (tokens.css from tokens.json) and sets data-theme on <html>.
+   generated/fallback.css repeats them under :where(), so previews still have colour before the
+   page has written tokens.css, and a value saved on the page always wins. */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "./generated/fallback.css";
+@import "./generated/kit.css";
+@source "../src";
+
+@custom-variant dark (&:is([data-theme="dark"] *));

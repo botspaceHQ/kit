@@ -1,0 +1,24 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "settings-tiles",
+  "title": "Settings tile grid",
+  "description": "The settings home: titled groups of tiles, one tonal icon colour per group.",
+  "dependencies": [
+    "lucide-react"
+  ],
+  "registryDependencies": [
+    "@botspace/theme"
+  ],
+  "files": [
+    {
+      "path": "src/components/kit/settings-tiles.tsx",
+      "content": "import * as React from \"react\"\nimport { ChevronRightIcon } from \"lucide-react\"\n\nimport { cn } from \"@/lib/utils\"\n\n/** The tonal fill behind a tile's icon. One tone per settings group, not per tile. */\nexport type TileTone = \"violet\" | \"success\" | \"secondary\" | \"warning\" | \"info\"\n\nconst toneClass: Record<TileTone, string> = {\n  violet: \"bg-violet text-violet-foreground\",\n  success: \"bg-success text-success-foreground\",\n  secondary: \"bg-secondary text-secondary-foreground\",\n  warning: \"bg-warning text-warning-foreground\",\n  info: \"bg-info text-info-foreground\",\n}\n\nexport type SettingsTile = {\n  icon: React.ComponentType<{ className?: string }>\n  title: string\n  /** One sentence: what a person changes here. */\n  body: string\n  /** A StatusBadge that needs attention (\"Review\", \"Connected\"). */\n  badge?: React.ReactNode\n  onClick?: () => void\n}\n\nexport type SettingsGroup = { title: string; tone: TileTone; tiles: SettingsTile[] }\n\n/** Settings home: a titled grid of tiles for each group. Three across on wide screens, one on phones. */\nexport function SettingsTiles({ groups }: { groups: SettingsGroup[] }) {\n  return (\n    <div className=\"mx-auto flex w-full max-w-5xl flex-col gap-8\">\n      {groups.map((g) => (\n        <section key={g.title} className=\"flex flex-col gap-3\">\n          <h2 className=\"font-medium\">{g.title}</h2>\n          <div className=\"grid gap-3 sm:grid-cols-2 lg:grid-cols-3\">\n            {g.tiles.map((t) => {\n              const Icon = t.icon\n              return (\n                <button\n                  key={t.title}\n                  type=\"button\"\n                  onClick={t.onClick}\n                  className=\"group flex items-start gap-3 rounded-xl border bg-card p-4 text-left transition-colors hover:bg-muted/50 focus-visible:ring-3 focus-visible:ring-ring/40 focus-visible:outline-none\"\n                >\n                  <span className={cn(\"grid size-9 shrink-0 place-items-center rounded-lg\", toneClass[g.tone])}>\n                    <Icon className=\"size-4\" />\n                  </span>\n                  <span className=\"min-w-0 flex-1\">\n                    <span className=\"flex items-center gap-2 text-sm font-medium\">\n                      {t.title}\n                      {t.badge}\n                    </span>\n                    <span className=\"mt-0.5 block text-[13px] text-muted-foreground\">{t.body}</span>\n                  </span>\n                  <ChevronRightIcon className=\"mt-0.5 size-4 shrink-0 text-muted-foreground opacity-0 transition-opacity group-hover:opacity-100 group-focus-visible:opacity-100\" />\n                </button>\n              )\n            })}\n          </div>\n        </section>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/kit/settings-tiles.tsx"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0"
+  },
+  "type": "registry:component"
+}

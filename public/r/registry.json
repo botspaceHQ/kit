@@ -1,0 +1,415 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "botspace",
+  "homepage": "https://kit.bot.space",
+  "items": [
+    {
+      "name": "theme",
+      "type": "registry:theme",
+      "title": "BotSpace theme",
+      "description": "Colour tokens (Material 3 values on shadcn role names), tonal status pairs, chart colours, layout sizes and the shape rules: pill buttons, 6 px chips, 8 px inputs and menus, Inter.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "cssVars": {
+        "theme": {
+          "font-heading": "var(--font-sans)",
+          "font-sans": "'Inter', 'Inter Variable', Helvetica, Arial, sans-serif",
+          "color-background": "var(--background)",
+          "color-foreground": "var(--foreground)",
+          "color-card": "var(--card)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-popover": "var(--popover)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-primary": "var(--primary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-secondary": "var(--secondary)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-muted": "var(--muted)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-accent": "var(--accent)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-destructive": "var(--destructive)",
+          "color-border": "var(--border)",
+          "color-input": "var(--input)",
+          "color-ring": "var(--ring)",
+          "color-chart-1": "var(--chart-1)",
+          "color-chart-2": "var(--chart-2)",
+          "color-chart-3": "var(--chart-3)",
+          "color-chart-4": "var(--chart-4)",
+          "color-chart-5": "var(--chart-5)",
+          "color-sidebar": "var(--sidebar)",
+          "color-sidebar-foreground": "var(--sidebar-foreground)",
+          "color-sidebar-primary": "var(--sidebar-primary)",
+          "color-sidebar-primary-foreground": "var(--sidebar-primary-foreground)",
+          "color-sidebar-accent": "var(--sidebar-accent)",
+          "color-sidebar-accent-foreground": "var(--sidebar-accent-foreground)",
+          "color-sidebar-border": "var(--sidebar-border)",
+          "color-sidebar-ring": "var(--sidebar-ring)",
+          "color-success": "var(--success)",
+          "color-success-foreground": "var(--success-foreground)",
+          "color-warning": "var(--warning)",
+          "color-warning-foreground": "var(--warning-foreground)",
+          "color-info": "var(--info)",
+          "color-info-foreground": "var(--info-foreground)",
+          "color-danger": "var(--danger)",
+          "color-danger-foreground": "var(--danger-foreground)",
+          "color-violet": "var(--violet)",
+          "color-violet-foreground": "var(--violet-foreground)",
+          "color-bubble-out": "var(--bubble-out)",
+          "color-bubble-in": "var(--bubble-in)",
+          "color-note": "var(--note)",
+          "color-note-foreground": "var(--note-foreground)",
+          "color-tint": "var(--tint)",
+          "color-canvas": "var(--canvas)",
+          "color-link": "var(--link)",
+          "color-brand-wa": "var(--brand-wa)",
+          "color-brand-ig": "var(--brand-ig)",
+          "radius-sm": "calc(var(--radius) * 0.6)",
+          "radius-md": "calc(var(--radius) * 0.8)",
+          "radius-lg": "var(--radius)",
+          "radius-xl": "calc(var(--radius) * 1.4)",
+          "radius-2xl": "calc(var(--radius) * 1.8)",
+          "radius-3xl": "calc(var(--radius) * 2.2)",
+          "radius-4xl": "calc(var(--radius) * 2.6)"
+        },
+        "light": {
+          "radius": "0.5rem",
+          "background": "#ffffff",
+          "foreground": "#181c1f",
+          "card": "#ffffff",
+          "card-foreground": "#181c1f",
+          "popover": "#ffffff",
+          "popover-foreground": "#181c1f",
+          "primary": "#1a1b1c",
+          "primary-foreground": "#ffffff",
+          "secondary": "#d1e5f4",
+          "secondary-foreground": "#0a1e28",
+          "muted": "#f0f4f8",
+          "muted-foreground": "#5a6268",
+          "accent": "#e5e8ed",
+          "accent-foreground": "#181c1f",
+          "destructive": "#ba1a1a",
+          "border": "#dde3ea",
+          "input": "#d1d7de",
+          "ring": "#1e6586",
+          "sidebar": "#f6fafe",
+          "sidebar-foreground": "#181c1f",
+          "sidebar-primary": "#1a1b1c",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#e5e8ed",
+          "sidebar-accent-foreground": "#181c1f",
+          "sidebar-border": "#dde3ea",
+          "sidebar-ring": "#1e6586",
+          "success": "#c0efb0",
+          "success-foreground": "#285020",
+          "warning": "#ffdcc7",
+          "warning-foreground": "#6e390e",
+          "info": "#9eefff",
+          "info-foreground": "#004e59",
+          "danger": "#ffdad6",
+          "danger-foreground": "#93000a",
+          "violet": "#e7deff",
+          "violet-foreground": "#3d335c",
+          "bubble-out": "#cef6e6",
+          "bubble-in": "#eef1f5",
+          "note": "#f4f3cf",
+          "note-foreground": "#494900",
+          "tint": "#1e6586",
+          "link": "#005bd3",
+          "canvas": "#eceff3",
+          "brand-wa": "#1e6b4f",
+          "brand-ig": "#8c4a5d",
+          "chart-1": "#1e6586",
+          "chart-2": "#406836",
+          "chart-3": "#8b4f24",
+          "chart-4": "#6a548d",
+          "chart-5": "#71787e"
+        },
+        "dark": {
+          "background": "#0f1417",
+          "foreground": "#dfe3e7",
+          "card": "#0f1417",
+          "card-foreground": "#dfe3e7",
+          "popover": "#1c2023",
+          "popover-foreground": "#dfe3e7",
+          "primary": "#e3e7eb",
+          "primary-foreground": "#14181b",
+          "secondary": "#2b3d48",
+          "secondary-foreground": "#d1e5f4",
+          "muted": "#151a1d",
+          "muted-foreground": "#a3abb1",
+          "accent": "#232a2e",
+          "accent-foreground": "#dfe3e7",
+          "destructive": "#ffb4ab",
+          "border": "#262c30",
+          "input": "#353c41",
+          "ring": "#90cef4",
+          "sidebar": "#12171a",
+          "sidebar-foreground": "#dfe3e7",
+          "sidebar-primary": "#e3e7eb",
+          "sidebar-primary-foreground": "#14181b",
+          "sidebar-accent": "#232a2e",
+          "sidebar-accent-foreground": "#dfe3e7",
+          "sidebar-border": "#262c30",
+          "sidebar-ring": "#90cef4",
+          "success": "#1f3d1a",
+          "success-foreground": "#a5d395",
+          "warning": "#4a2a10",
+          "warning-foreground": "#ffb68a",
+          "info": "#003a43",
+          "info-foreground": "#7fd8ea",
+          "danger": "#5c1410",
+          "danger-foreground": "#ffb4ab",
+          "violet": "#352f4b",
+          "violet-foreground": "#d5cbf3",
+          "bubble-out": "#143a2d",
+          "bubble-in": "#1c2226",
+          "note": "#33330f",
+          "note-foreground": "#e2e18a",
+          "tint": "#90cef4",
+          "link": "#90cef4",
+          "canvas": "#080b0d",
+          "brand-wa": "#87d6bd",
+          "brand-ig": "#ffb1c4",
+          "chart-1": "#7cc4ee",
+          "chart-2": "#8fcf7d",
+          "chart-3": "#ffb68a",
+          "chart-4": "#b9a9f0",
+          "chart-5": "#8b9297"
+        }
+      },
+      "css": {
+        ":root": {
+          "--header-height": "56px",
+          "--rail-width": "56px",
+          "--subnav-width": "240px",
+          "--pane-width": "320px"
+        },
+        "[data-slot=\"button\"]": {
+          "border-radius": "9999px"
+        },
+        "[data-slot=\"badge\"]": {
+          "border-radius": "6px"
+        },
+        "[data-slot=\"tabs-list\"], [data-slot=\"tabs-trigger\"]": {
+          "border-radius": "9999px"
+        },
+        "[data-slot=\"avatar\"], [data-slot=\"avatar-fallback\"]": {
+          "border-radius": "9999px"
+        },
+        "button:not(:disabled), [role=\"button\"]:not([aria-disabled=\"true\"]), a[href], label[for], summary": {
+          "cursor": "pointer"
+        },
+        "button:disabled, [aria-disabled=\"true\"]": {
+          "cursor": "not-allowed"
+        },
+        "@layer base": {
+          "body": {
+            "font-feature-settings": "'cv11', 'ss01'"
+          }
+        }
+      }
+    },
+    {
+      "name": "frame",
+      "type": "registry:component",
+      "title": "App frame",
+      "description": "AppFrame and AppRail (56 px icon rail), SubNav (240 px section navigation), Page and PaneHeader (56 px header, filter row), Container, Panel and ViewTabs.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@botspace/theme",
+        "button",
+        "card",
+        "tabs",
+        "sheet",
+        "tooltip"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/frame.tsx",
+          "type": "registry:component",
+          "target": "components/kit/frame.tsx"
+        },
+        {
+          "path": "src/components/kit/app-rail.tsx",
+          "type": "registry:component",
+          "target": "components/kit/app-rail.tsx"
+        }
+      ]
+    },
+    {
+      "name": "inbox",
+      "type": "registry:component",
+      "title": "Sectioned inbox panes",
+      "description": "PaneSection, DetailRow, ListRow, PaneEmpty, MessageBubble and ThreadDivider for the fully sectioned inbox (no cards).",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@botspace/frame"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/inbox-panes.tsx",
+          "type": "registry:component",
+          "target": "components/kit/inbox-panes.tsx"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:component",
+      "title": "Data table",
+      "description": "One grid for every list page on TanStack Table v8: sort, row selection with bulk actions, column visibility, paging.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "dependencies": [
+        "@tanstack/react-table@^8.21.3",
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@botspace/theme",
+        "button",
+        "checkbox",
+        "dropdown-menu"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/data-table.tsx",
+          "type": "registry:component",
+          "target": "components/kit/data-table.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-cards",
+      "type": "registry:component",
+      "title": "Stat cards",
+      "description": "A row of shadcn section cards: one number per card, a trend in the corner, context in the footer.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "registryDependencies": [
+        "@botspace/theme",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/stat-cards.tsx",
+          "type": "registry:component",
+          "target": "components/kit/stat-cards.tsx"
+        }
+      ]
+    },
+    {
+      "name": "charts",
+      "type": "registry:component",
+      "title": "Charts",
+      "description": "TimeChart, Legend, BarList, Heatmap, Ring and FlowChart. Plain SVG at the real pixel width, coloured by the chart tokens.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "registryDependencies": [
+        "@botspace/theme"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/charts.tsx",
+          "type": "registry:component",
+          "target": "components/kit/charts.tsx"
+        }
+      ]
+    },
+    {
+      "name": "status-badge",
+      "type": "registry:component",
+      "title": "Status badge",
+      "description": "Stock Badge with the BotSpace tonal pairs. One map from tone to colour, with the OS tone names as aliases.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "registryDependencies": [
+        "@botspace/theme",
+        "badge"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/status-badge.tsx",
+          "type": "registry:component",
+          "target": "components/kit/status-badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "segmented",
+      "type": "registry:component",
+      "title": "Segmented control",
+      "description": "A full-width pill track with a tonal selected segment, for narrow panes.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "registryDependencies": [
+        "@botspace/theme"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/segmented.tsx",
+          "type": "registry:component",
+          "target": "components/kit/segmented.tsx"
+        }
+      ]
+    },
+    {
+      "name": "settings-tiles",
+      "type": "registry:component",
+      "title": "Settings tile grid",
+      "description": "The settings home: titled groups of tiles, one tonal icon colour per group.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "dependencies": [
+        "lucide-react"
+      ],
+      "registryDependencies": [
+        "@botspace/theme"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/settings-tiles.tsx",
+          "type": "registry:component",
+          "target": "components/kit/settings-tiles.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-section",
+      "type": "registry:component",
+      "title": "Two-column form",
+      "description": "FormSection (title and one sentence on the left, fields on the right), FormField and FormStack.",
+      "meta": {
+        "version": "0.1.0"
+      },
+      "registryDependencies": [
+        "@botspace/theme",
+        "card"
+      ],
+      "files": [
+        {
+          "path": "src/components/kit/form-section.tsx",
+          "type": "registry:component",
+          "target": "components/kit/form-section.tsx"
+        }
+      ]
+    }
+  ]
+}

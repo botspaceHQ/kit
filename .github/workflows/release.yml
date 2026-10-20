@@ -1,0 +1,47 @@
+name: Release
+
+# Push a tag such as v0.1.0 (it must match package.json) to publish @botspacehq/kit to npm and
+# deploy the reference site and the public registry to kit.bot.space.
+# Secrets: NPM_TOKEN, VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID.
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: read
+  id-token: write # npm provenance
+
+concurrency: release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          registry-url: https://registry.npmjs.org
+      - name: Tag matches package.json
+        run: test "v$(node -p 'require("./package.json").version')" = "$GITHUB_REF_NAME"
+      - run: npm ci
+      - run: npm run build
+      - run: node scripts/consumer-test.ts
+      - name: Publish to npm
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Deploy site/ to kit.bot.space
+        run: npx --yes vercel@latest deploy site --prod --yes --token "$VERCEL_TOKEN"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+      - name: Check kit.bot.space
+        run: |
+          sleep 10
+          curl -fsS https://kit.bot.space/ -o /dev/null
+          curl -fsS https://kit.bot.space/r/registry.json -o /dev/null
+          curl -fsS https://kit.bot.space/r/data-table.json -o /dev/null

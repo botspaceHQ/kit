@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-cards",
+  "title": "Stat cards",
+  "description": "A row of shadcn section cards: one number per card, a trend in the corner, context in the footer.",
+  "registryDependencies": [
+    "@botspace/theme",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/kit/stat-cards.tsx",
+      "content": "import * as React from \"react\"\n\nimport {\n  Card,\n  CardAction,\n  CardDescription,\n  CardFooter,\n  CardHeader,\n  CardTitle,\n} from \"@/components/ui/card\"\n\nexport type StatCardItem = {\n  label: string\n  value: string\n  /** A small badge or delta in the top-right corner. */\n  trend?: React.ReactNode\n  /** One line of context under the number. */\n  hint?: React.ReactNode\n}\n\n/** shadcn \"section cards\": one Card per number, trend in the corner, context in the footer. */\nexport function StatCards({ items }: { items: StatCardItem[] }) {\n  return (\n    <div className=\"grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4\">\n      {items.map((s) => (\n        <Card key={s.label} size=\"sm\" data-stat-card=\"\">\n          <CardHeader>\n            <CardDescription>{s.label}</CardDescription>\n            <CardTitle className=\"text-2xl font-semibold tabular-nums group-data-[size=sm]/card:text-2xl\">{s.value}</CardTitle>\n            {s.trend && <CardAction>{s.trend}</CardAction>}\n          </CardHeader>\n          {s.hint && <CardFooter className=\"text-xs text-muted-foreground\">{s.hint}</CardFooter>}\n        </Card>\n      ))}\n    </div>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/kit/stat-cards.tsx"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0"
+  },
+  "type": "registry:component"
+}

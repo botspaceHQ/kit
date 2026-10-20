@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "form-section",
+  "title": "Two-column form",
+  "description": "FormSection (title and one sentence on the left, fields on the right), FormField and FormStack.",
+  "registryDependencies": [
+    "@botspace/theme",
+    "card"
+  ],
+  "files": [
+    {
+      "path": "src/components/kit/form-section.tsx",
+      "content": "import * as React from \"react\"\n\nimport { Card, CardContent } from \"@/components/ui/card\"\n\n/**\n * Two-column settings form block: what it is on the left (title and one sentence),\n * the fields on the right. Stacks to one column under 768 px.\n */\nexport function FormSection({\n  title,\n  description,\n  children,\n}: {\n  title: string\n  description: string\n  children: React.ReactNode\n}) {\n  return (\n    <Card>\n      <CardContent className=\"grid gap-6 md:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]\">\n        <div>\n          <h3 className=\"font-medium\">{title}</h3>\n          <p className=\"mt-1 text-sm text-muted-foreground\">{description}</p>\n        </div>\n        <div className=\"flex flex-col gap-4\">{children}</div>\n      </CardContent>\n    </Card>\n  )\n}\n\n/** Label, control, then an optional hint. The label points at the control by id. */\nexport function FormField({\n  id,\n  label,\n  hint,\n  error,\n  children,\n}: {\n  id: string\n  label: string\n  hint?: string\n  /** Replaces the hint. Say what is wrong and how to fix it. */\n  error?: string\n  children: React.ReactNode\n}) {\n  return (\n    <div className=\"flex flex-col gap-1.5\">\n      <label htmlFor={id} className=\"text-sm font-medium\">\n        {label}\n      </label>\n      {children}\n      {error ? (\n        <p className=\"text-xs text-destructive\">{error}</p>\n      ) : (\n        hint && <p className=\"text-xs text-muted-foreground\">{hint}</p>\n      )}\n    </div>\n  )\n}\n\n/** A stack of FormSections with the page's save row under them. */\nexport function FormStack({ children }: { children: React.ReactNode }) {\n  return <div className=\"mx-auto flex w-full max-w-5xl flex-col gap-4\">{children}</div>\n}\n",
+      "type": "registry:component",
+      "target": "components/kit/form-section.tsx"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0"
+  },
+  "type": "registry:component"
+}

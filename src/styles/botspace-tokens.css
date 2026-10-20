@@ -1,0 +1,123 @@
+/* ============================================================================
+   BotSpace Kit: colour tokens.
+   Values are the Material 3 scheme from libs/ui-utils/colors.ts, set on the stock shadcn role names.
+   Neutrals keep the cool blue-grey tint. Primary stays near-black.
+   One token on each line. The comment after a token is its usage note: the reference site and
+   the design-system export read it, so keep it short and true.
+   ============================================================================ */
+
+:root {
+    --radius: 0.5rem; /* Inputs and menus. shadcn derives every other radius from it. */
+
+    --background: #ffffff; /* Page, panes, lists, thread. */
+    --foreground: #181c1f; /* Body text on background, card and muted. */
+    --card: #ffffff; /* Cards on report, list and settings pages. */
+    --card-foreground: #181c1f; /* Text on card. */
+    --popover: #ffffff; /* Menus, tooltips, dialogs. */
+    --popover-foreground: #181c1f; /* Text on popover. */
+    --primary: #1a1b1c; /* Main button, unread count, selected-row marker. */
+    --primary-foreground: #ffffff; /* Text and icons on primary. */
+    --secondary: #d1e5f4; /* Tonal button, bulk-selection bar. */
+    --secondary-foreground: #0a1e28; /* Text on secondary. */
+    --muted: #f0f4f8; /* Table head, quiet blocks, hover on rows. */
+    --muted-foreground: #5a6268; /* Secondary text: hints, times, counts. */
+    --accent: #e5e8ed; /* Hover and selected item in lists and menus. */
+    --accent-foreground: #181c1f; /* Text on accent. */
+    --destructive: #ba1a1a; /* Delete and other actions you cannot undo. */
+    --border: #dde3ea; /* Every line: pane edges, header lines, card and table borders. */
+    --input: #d1d7de; /* Input and select borders. */
+    --ring: #1e6586; /* Focus ring. */
+
+    --sidebar: #f6fafe; /* Icon rail and section navigation pane. */
+    --sidebar-foreground: #181c1f; /* Text in the rail and section navigation. */
+    --sidebar-primary: #1a1b1c; /* Active mark in the rail. */
+    --sidebar-primary-foreground: #ffffff; /* Text on sidebar-primary. */
+    --sidebar-accent: #e5e8ed; /* Hover and active item in the rail and section navigation. */
+    --sidebar-accent-foreground: #181c1f; /* Text on sidebar-accent. */
+    --sidebar-border: #dde3ea; /* Lines inside the rail and section navigation. */
+    --sidebar-ring: #1e6586; /* Focus ring inside the rail. */
+
+    --success: #c0efb0; /* Tonal fill: paid, delivered, on, completed. */
+    --success-foreground: #285020; /* Text on success. */
+    --warning: #ffdcc7; /* Tonal fill: unpaid COD, reply soon, needs review. */
+    --warning-foreground: #6e390e; /* Text on warning. */
+    --info: #9eefff; /* Tonal fill: scheduled, in transit, new. */
+    --info-foreground: #004e59; /* Text on info. */
+    --danger: #ffdad6; /* Tonal fill: failed, overdue, blocked. */
+    --danger-foreground: #93000a; /* Text on danger. */
+    --violet: #e7deff; /* Tonal fill: AI agent, plan and workspace marks. */
+    --violet-foreground: #3d335c; /* Text on violet. */
+
+    --bubble-out: #cef6e6; /* Outgoing chat message. */
+    --bubble-in: #eef1f5; /* Incoming chat message. */
+    --note: #f4f3cf; /* Internal note in a thread. */
+    --note-foreground: #494900; /* Text on note. */
+    --tint: #1e6586; /* Small marks: AI-handled icon, link-like accents. */
+    --link: #005bd3; /* Inline links in text. */
+    --canvas: #eceff3; /* Ground behind framed previews. */
+    --brand-wa: #1e6b4f; /* WhatsApp channel mark only. */
+    --brand-ig: #8c4a5d; /* Instagram channel mark only. */
+
+    --chart-1: #1e6586; /* First data series. */
+    --chart-2: #406836; /* Second data series. */
+    --chart-3: #8b4f24; /* Third data series. */
+    --chart-4: #6a548d; /* Fourth data series. */
+    --chart-5: #71787e; /* Other, the rest, or a baseline. */
+}
+
+.dark {
+    --background: #0f1417;
+    --foreground: #dfe3e7;
+    --card: #0f1417;
+    --card-foreground: #dfe3e7;
+    --popover: #1c2023;
+    --popover-foreground: #dfe3e7;
+    --primary: #e3e7eb;
+    --primary-foreground: #14181b;
+    --secondary: #2b3d48;
+    --secondary-foreground: #d1e5f4;
+    --muted: #151a1d;
+    --muted-foreground: #a3abb1;
+    --accent: #232a2e;
+    --accent-foreground: #dfe3e7;
+    --destructive: #ffb4ab;
+    --border: #262c30;
+    --input: #353c41;
+    --ring: #90cef4;
+
+    --sidebar: #12171a;
+    --sidebar-foreground: #dfe3e7;
+    --sidebar-primary: #e3e7eb;
+    --sidebar-primary-foreground: #14181b;
+    --sidebar-accent: #232a2e;
+    --sidebar-accent-foreground: #dfe3e7;
+    --sidebar-border: #262c30;
+    --sidebar-ring: #90cef4;
+
+    --success: #1f3d1a;
+    --success-foreground: #a5d395;
+    --warning: #4a2a10;
+    --warning-foreground: #ffb68a;
+    --info: #003a43;
+    --info-foreground: #7fd8ea;
+    --danger: #5c1410;
+    --danger-foreground: #ffb4ab;
+    --violet: #352f4b;
+    --violet-foreground: #d5cbf3;
+
+    --bubble-out: #143a2d;
+    --bubble-in: #1c2226;
+    --note: #33330f;
+    --note-foreground: #e2e18a;
+    --tint: #90cef4;
+    --link: #90cef4;
+    --canvas: #080b0d;
+    --brand-wa: #87d6bd;
+    --brand-ig: #ffb1c4;
+
+    --chart-1: #7cc4ee;
+    --chart-2: #8fcf7d;
+    --chart-3: #ffb68a;
+    --chart-4: #b9a9f0;
+    --chart-5: #8b9297;
+}

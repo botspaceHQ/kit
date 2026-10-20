@@ -1,0 +1,50 @@
+<!-- @dsCard height=300 -->
+<style>
+  .cv { position: relative; width: 960px; height: 300px; background: var(--background); overflow: hidden; font-family: "Inter", Helvetica, Arial, sans-serif; }
+  .cv svg { position: absolute; inset: 0; }
+  .ink { fill: var(--primary); }
+  .tone-a { fill: var(--secondary); }
+  .tone-b { fill: var(--success); }
+  .tone-c { fill: var(--warning); }
+  .tone-d { fill: var(--violet); }
+  .side { fill: var(--sidebar); }
+  .rule { stroke: var(--border); stroke-width: 1; }
+  .rule-on { stroke: var(--foreground); stroke-opacity: .18; stroke-width: 1; }
+  .pill { fill: var(--primary); }
+  .chip { fill: var(--card); }
+  .name { position: absolute; left: 40px; bottom: 36px; max-width: 440px; }
+  .name h1 { margin: 0; font-size: 88px; line-height: .95; font-weight: 600; letter-spacing: -0.03em; color: var(--foreground); }
+  .name p { margin: 14px 0 0; font-size: 14px; line-height: 20px; color: var(--muted-foreground); }
+</style>
+<div class="cv">
+  <svg viewBox="0 0 960 300" width="960" height="300" aria-hidden="true">
+    <!--
+      blocks: primary as the 56 px rail slab (rail-width × 300); secondary 184 × 300 (the section pane);
+              success 240 × 168; warning and violet 120 × 132 each. All flush, bleeding off the top, right and bottom.
+      arrangement: the product frame itself, panes that touch with one line and no gap, left to right from x = 480.
+      pattern: hairlines (border) at header-height (56 px) crossing every block, because BotSpace draws with lines
+               and every header line meets across the screen; three pills (radius-pill) and two 6 px chips (radius-chip)
+               sit on the header line like the buttons and badges of a pane header.
+      steps and radii: rail-width 56, header-height 56, space-4 16, pill height 24 (rx 12), chip height 20 (rx 6).
+    -->
+    <rect class="ink" x="480" y="0" width="56" height="300" />
+    <rect class="tone-a" x="536" y="0" width="184" height="300" />
+    <rect class="tone-b" x="720" y="0" width="240" height="168" />
+    <rect class="tone-c" x="720" y="168" width="120" height="132" />
+    <rect class="tone-d" x="840" y="168" width="120" height="132" />
+    <line class="rule" x1="480" y1="56" x2="536" y2="56" />
+    <line class="rule-on" x1="536" y1="56" x2="960" y2="56" />
+    <line class="rule-on" x1="720" y1="168" x2="960" y2="168" />
+    <line class="rule-on" x1="720" y1="0" x2="720" y2="300" />
+    <line class="rule-on" x1="840" y1="168" x2="840" y2="300" />
+    <rect class="pill" x="552" y="16" width="88" height="24" rx="12" />
+    <rect class="pill" x="872" y="16" width="72" height="24" rx="12" />
+    <rect class="pill" x="736" y="184" width="88" height="24" rx="12" />
+    <rect class="chip" x="736" y="18" width="56" height="20" rx="6" />
+    <rect class="chip" x="856" y="184" width="64" height="20" rx="6" />
+  </svg>
+  <div class="name">
+    <h1>BotSpace<br />Kit</h1>
+    <p>Stock shadcn, drawn with lines. One kit for the dashboard and every OS app.</p>
+  </div>
+</div>

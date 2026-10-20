@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "status-badge",
+  "title": "Status badge",
+  "description": "Stock Badge with the BotSpace tonal pairs. One map from tone to colour, with the OS tone names as aliases.",
+  "registryDependencies": [
+    "@botspace/theme",
+    "badge"
+  ],
+  "files": [
+    {
+      "path": "src/components/kit/status-badge.tsx",
+      "content": "import * as React from \"react\"\nimport { cn } from \"@/lib/utils\"\n\nimport { Badge } from \"@/components/ui/badge\"\n\n/** Stock Badge plus BotSpace tonal colours. One place maps a tone to colours. */\nexport type Tone = \"neutral\" | \"success\" | \"warning\" | \"info\" | \"danger\" | \"violet\" | \"secondary\" | \"outline\"\n\n/** Tone names from the OS kit (@botspace/ui StatusTone). They map to kit tones until the OS apps move. */\nexport type LegacyTone = \"good\" | \"serious\" | \"critical\"\n\nconst legacy: Record<LegacyTone, Tone> = { good: \"success\", serious: \"warning\", critical: \"danger\" }\n\n/** A tone's fill and text, for small pieces that are not a badge (a calendar chip, a dot). */\nexport const TONE_CLASS: Record<Tone, string> = {\n  neutral: \"bg-accent text-foreground\",\n  success: \"bg-success text-success-foreground\",\n  warning: \"bg-warning text-warning-foreground\",\n  info: \"bg-info text-info-foreground\",\n  danger: \"bg-danger text-danger-foreground\",\n  violet: \"bg-violet text-violet-foreground\",\n  secondary: \"bg-secondary text-secondary-foreground\",\n  outline: \"border-border bg-transparent text-muted-foreground\",\n}\n\n/**\n * A record's state (paid, scheduled, failed). Map values to tones once, next to the data type,\n * never inline in a page. Always carries a word: colour is never the only signal.\n */\nexport function StatusBadge({\n  tone: t,\n  variant,\n  className,\n  children,\n}: {\n  tone?: Tone | LegacyTone | \"default\"\n  /** Same as tone; kept so status tables can say `variant`. */\n  variant?: Tone | LegacyTone | \"default\"\n  className?: string\n  children: React.ReactNode\n}) {\n  const raw = t ?? variant ?? \"neutral\"\n  const key: Tone = raw === \"default\" ? \"neutral\" : raw in legacy ? legacy[raw as LegacyTone] : (raw as Tone)\n  return (\n    <Badge variant=\"secondary\" className={cn(TONE_CLASS[key], className)}>\n      {children}\n    </Badge>\n  )\n}\n",
+      "type": "registry:component",
+      "target": "components/kit/status-badge.tsx"
+    }
+  ],
+  "meta": {
+    "version": "0.1.0"
+  },
+  "type": "registry:component"
+}
