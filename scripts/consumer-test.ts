@@ -1,4 +1,4 @@
-// Proves the package works for an app: packs @botspacehq/kit, copies test/consumer (a clean Vite app
+// Proves the package works for an app: packs @botspace/kit, copies test/consumer (a clean Vite app
 // that imports the styles and renders AppFrame, Page and DataTable) to a temp folder, installs the
 // tarball, type-checks and builds it, then checks that Tailwind found the kit's classes via @source.
 // Run after build:lib: node scripts/consumer-test.ts [--keep]

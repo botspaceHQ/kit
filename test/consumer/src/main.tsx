@@ -11,7 +11,7 @@ import {
   TooltipProvider,
   selectColumn,
   type DataTableProps,
-} from "@botspacehq/kit"
+} from "@botspace/kit"
 
 import "./index.css"
 

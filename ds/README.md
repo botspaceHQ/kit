@@ -1,4 +1,4 @@
-BotSpace Kit is the UI kit for the new BotSpace dashboard. It is stock shadcn/ui (base-nova style, Base UI, Tailwind 4) with a small BotSpace theme and a set of blocks: the app frame, sectioned inbox panes, a data table, stat cards, charts, settings tiles and two-column forms. Apps install it as one npm package, `@botspacehq/kit`. A public shadcn registry offers the same parts for prototypes. The OS apps keep their own kit for now.
+BotSpace Kit is the UI kit for the new BotSpace dashboard. It is stock shadcn/ui (base-nova style, Base UI, Tailwind 4) with a small BotSpace theme and a set of blocks: the app frame, sectioned inbox panes, a data table, stat cards, charts, settings tiles and two-column forms. Apps install it as one npm package, `@botspace/kit`. A public shadcn registry offers the same parts for prototypes. The OS apps keep their own kit for now.
 
 ## Content fundamentals
 
@@ -73,9 +73,9 @@ BotSpace Kit is the UI kit for the new BotSpace dashboard. It is stock shadcn/ui
 
 ## Install in an app
 
-1. Install the package: `npm install @botspacehq/kit`.
-2. In the app's CSS file, after `@import "tailwindcss";`, add `@import "@botspacehq/kit/styles.css";` and `@source "../node_modules/@botspacehq/kit/dist";`.
-3. Import parts from `@botspacehq/kit`. Do not copy kit files into the app.
+1. Install the package: `npm install @botspace/kit`.
+2. In the app's CSS file, after `@import "tailwindcss";`, add `@import "@botspace/kit/styles.css";` and `@source "../node_modules/@botspace/kit/dist";`.
+3. Import parts from `@botspace/kit`. Do not copy kit files into the app.
 
 For a prototype, copy parts in with the shadcn CLI instead:
 

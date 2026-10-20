@@ -1,8 +1,8 @@
 # BotSpace Kit
 
-The UI kit for the new BotSpace dashboard. It is stock shadcn/ui (base-nova style, Base UI, Tailwind 4) with a small BotSpace theme and a set of blocks. Apps install it as one npm package, `@botspacehq/kit`. The OS apps keep their own kit for now. This repo holds four things:
+The UI kit for the new BotSpace dashboard. It is stock shadcn/ui (base-nova style, Base UI, Tailwind 4) with a small BotSpace theme and a set of blocks. Apps install it as one npm package, `@botspace/kit`. The OS apps keep their own kit for now. This repo holds four things:
 
-- **The package.** `npm run build:lib` writes `@botspacehq/kit` to `dist/`: the primitives, the kit blocks, `styles.css` and types.
+- **The package.** `npm run build:lib` writes `@botspace/kit` to `dist/`: the primitives, the kit blocks, `styles.css` and types.
 
 - **The registry.** `registry.json` lists 10 items. `npm run build:registry` writes them to `public/r/*.json`. Apps install them with the shadcn CLI.
 - **The reference site.** `src/docs` (Foundations, Components, Patterns). `npm run build` writes one self-contained `site/index.html` plus `site/r/`. kit.bot.space serves this folder.
@@ -42,17 +42,17 @@ node scripts/consumer-test.ts
 
 ## Use the kit in an app (npm)
 
-1. Install the package: `npm install @botspacehq/kit`. It needs React 19 and Tailwind 4. The package is on public npm. If a machine maps `@botspacehq` to GitHub Packages in `~/.npmrc`, add `@botspacehq:registry=https://registry.npmjs.org/` to the app's `.npmrc`.
+1. Install the package: `npm install @botspace/kit`. It needs React 19 and Tailwind 4.
 2. In the app's CSS file, import the styles after Tailwind. Add one `@source` line for the package, so Tailwind sees the classes the kit uses. The path is relative to the CSS file.
 
    ```css
    @import "tailwindcss";
-   @import "@botspacehq/kit/styles.css";
-   @source "../node_modules/@botspacehq/kit/dist";
+   @import "@botspace/kit/styles.css";
+   @source "../node_modules/@botspace/kit/dist";
    ```
 
 3. Wrap the app in `ThemeProvider` and `TooltipProvider`.
-4. Import every part from the package: `import { Page, DataTable, Button } from "@botspacehq/kit"`.
+4. Import every part from the package: `import { Page, DataTable, Button } from "@botspace/kit"`.
 5. Load Inter on the page (Google Fonts or `@fontsource-variable/inter`).
 
 ## Install the kit in a prototype (registry)
@@ -78,4 +78,7 @@ Until kit.bot.space is live, serve `public/` on a local port and point the regis
 2. Tag the commit with the version in `package.json`: `git tag v0.1.1`.
 3. Push the tag: `git push origin v0.1.1`.
 
-The release workflow builds, runs the install test, publishes `@botspacehq/kit` to npm and deploys `site/` to kit.bot.space. It needs four repo secrets: `NPM_TOKEN`, `VERCEL_TOKEN`, `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID`.
+The release workflow builds, runs the install test, publishes `@botspace/kit` to npm and deploys `site/` to kit.bot.space. It skips the npm step when that version is already on npm.
+
+- npm: the package uses npm trusted publishing. GitHub Actions signs in with OIDC, so there is no npm token. The trusted publisher on npmjs.com is `botspaceHQ/kit`, workflow `release.yml`. The npm account is `botspace`.
+- Vercel: three repo secrets, `VERCEL_TOKEN`, `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID`.

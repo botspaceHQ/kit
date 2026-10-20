@@ -17,7 +17,7 @@ import { SettingsPage } from "@/examples/settings"
 export const KIT_VERSION = "0.1.0"
 export const REGISTRY_URL = "https://kit.bot.space/r/{name}.json"
 
-const importOf = (d: ComponentDoc) => `import { ${d.name.split(" ")[0]} } from "@botspacehq/kit"`
+const importOf = (d: ComponentDoc) => `import { ${d.name.split(" ")[0]} } from "@botspace/kit"`
 
 const installOf = (d: ComponentDoc) =>
   d.group === "Stock shadcn" ? `npx shadcn@latest add ${d.item}` : `npx shadcn@latest add @botspace/${d.item}`
@@ -30,7 +30,7 @@ export function IntroPage({ go }: { go: (id: string) => void }) {
     <div className="flex flex-col gap-8">
       <DocTitle
         title="BotSpace Kit"
-        lead="The UI kit for the new BotSpace dashboard. It is stock shadcn/ui on Base UI, a small BotSpace theme, and a set of blocks for the frame, the inbox, tables, charts and settings. Apps install it as one npm package, @botspacehq/kit. A public shadcn registry offers the same parts for prototypes."
+        lead="The UI kit for the new BotSpace dashboard. It is stock shadcn/ui on Base UI, a small BotSpace theme, and a set of blocks for the frame, the inbox, tables, charts and settings. Apps install it as one npm package, @botspace/kit. A public shadcn registry offers the same parts for prototypes."
         meta={
           <>
             <Badge variant="outline">v{KIT_VERSION}</Badge>
@@ -67,20 +67,20 @@ export function IntroPage({ go }: { go: (id: string) => void }) {
         <H2>Set up an app</H2>
         <Prose>
           <ol>
-            <li>Install the package: <code>npm install @botspacehq/kit</code>.</li>
+            <li>Install the package: <code>npm install @botspace/kit</code>.</li>
             <li>Import the styles once, in your CSS file, after Tailwind.</li>
             <li>Add one <code>@source</code> line for the package, so Tailwind sees the classes the kit uses.</li>
-            <li>Import parts from <code>@botspacehq/kit</code>. Do not copy kit files into the app.</li>
+            <li>Import parts from <code>@botspace/kit</code>. Do not copy kit files into the app.</li>
           </ol>
           <p className="text-muted-foreground">The package ships in phase 1 of the kit plan. Until then, use the registry below.</p>
         </Prose>
         <CodeBlock
           label="app.css"
           code={`@import "tailwindcss";
-@import "@botspacehq/kit/styles.css";
-@source "../node_modules/@botspacehq/kit/dist";`}
+@import "@botspace/kit/styles.css";
+@source "../node_modules/@botspace/kit/dist";`}
         />
-        <CodeBlock label="page.tsx" code={`import { Page, DataTable, StatusBadge } from "@botspacehq/kit"`} />
+        <CodeBlock label="page.tsx" code={`import { Page, DataTable, StatusBadge } from "@botspace/kit"`} />
         <H2>Prototypes: the registry</H2>
         <Prose>
           <p>For a prototype or a small tool, copy parts in with the shadcn CLI. Add the registry to <code>components.json</code>, then add the theme and the parts.</p>
@@ -114,7 +114,7 @@ export function IntroPage({ go }: { go: (id: string) => void }) {
         <H2>Who uses it</H2>
         <Prose>
           <ul>
-            <li><strong>New BotSpace dashboard.</strong> The rebuilt frontend at new.dashboard.bot.space installs <code>@botspacehq/kit</code>, the Inbox first. Workspaces can opt in early. On one set date, every workspace moves to it.</li>
+            <li><strong>New BotSpace dashboard.</strong> The rebuilt frontend at new.dashboard.bot.space installs <code>@botspace/kit</code>, the Inbox first. Workspaces can opt in early. On one set date, every workspace moves to it.</li>
             <li><strong>Prototypes and small tools.</strong> Any Vite or Next.js app installs the package, or copies parts in from the registry.</li>
             <li><strong>OS apps.</strong> Not now. They keep <code>@botspace/ui</code>. A merge of the two kits is a later decision.</li>
           </ul>

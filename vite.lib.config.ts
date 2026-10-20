@@ -2,7 +2,7 @@ import { resolve } from "node:path"
 import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 
-// Builds the @botspacehq/kit package into dist/: one ES module per source file, every
+// Builds the @botspace/kit package into dist/: one ES module per source file, every
 // dependency left external. Run by scripts/build-lib.ts, which also writes the types and styles.css.
 const local = (id: string) => id.startsWith(".") || id.startsWith("/") || id.startsWith("@/") || id.startsWith("\0")
 

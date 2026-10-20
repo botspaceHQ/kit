@@ -1,8 +1,10 @@
 name: Release
 
-# Push a tag such as v0.1.0 (it must match package.json) to publish @botspacehq/kit to npm and
+# Push a tag such as v0.1.0 (it must match package.json) to publish @botspace/kit to npm and
 # deploy the reference site and the public registry to kit.bot.space.
-# Secrets: NPM_TOKEN, VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID.
+# npm: trusted publishing (OIDC, no token; set up on npmjs.com for botspaceHQ/kit + release.yml).
+# NPM_TOKEN is only a fallback for a publish before trusted publishing is set up.
+# Secrets: VERCEL_TOKEN, VERCEL_ORG_ID, VERCEL_PROJECT_ID (and NPM_TOKEN, optional).
 
 on:
   push:
@@ -10,7 +12,7 @@ on:
 
 permissions:
   contents: read
-  id-token: write # npm provenance
+  id-token: write # npm trusted publishing and provenance
 
 concurrency: release
 
@@ -29,8 +31,16 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: node scripts/consumer-test.ts
+      # Trusted publishing needs npm 11.5.1 or later.
+      - run: npm install -g npm@latest
       - name: Publish to npm
-        run: npm publish --provenance --access public
+        run: |
+          V=$(node -p 'require("./package.json").version')
+          if npm view "@botspace/kit@$V" version >/dev/null 2>&1; then
+            echo "@botspace/kit@$V is already on npm: skip"
+          else
+            npm publish --provenance --access public
+          fi
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Deploy site/ to kit.bot.space

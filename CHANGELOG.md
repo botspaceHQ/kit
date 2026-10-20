@@ -1,6 +1,6 @@
 # Changelog
 
-All changes to `@botspacehq/kit` are in this file. The kit follows [semantic versions](https://semver.org):
+All changes to `@botspace/kit` are in this file. The kit follows [semantic versions](https://semver.org):
 
 - **Patch**: a fix with no visible change.
 - **Minor**: a new part, a new prop or a new token.
@@ -14,8 +14,8 @@ The first release.
 
 ### Package
 
-- One npm package, `@botspacehq/kit`. It exports the stock shadcn primitives (base-nova style on Base UI), the kit blocks, `ThemeProvider` and `cn`.
-- `@botspacehq/kit/styles.css` holds the shadcn base, the BotSpace colour tokens (light and dark), the theme map, the layout sizes and the four shape rules.
+- One npm package, `@botspace/kit`. It exports the stock shadcn primitives (base-nova style on Base UI), the kit blocks, `ThemeProvider` and `cn`.
+- `@botspace/kit/styles.css` holds the shadcn base, the BotSpace colour tokens (light and dark), the theme map, the layout sizes and the four shape rules.
 - Types ship with the package.
 
 ### Primitives

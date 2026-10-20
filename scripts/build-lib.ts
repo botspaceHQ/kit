@@ -1,7 +1,7 @@
-// Builds the @botspacehq/kit npm package into dist/:
+// Builds the @botspace/kit npm package into dist/:
 // src/index.ts (generated: every file in components/ui and components/kit, the theme provider, cn),
 // one ES module per source file, .d.ts types with "@/" rewritten to relative paths, and styles.css.
-// Apps import "@botspacehq/kit/styles.css" and add `@source "<path to>/node_modules/@botspacehq/kit/dist";`.
+// Apps import "@botspace/kit/styles.css" and add `@source "<path to>/node_modules/@botspace/kit/dist";`.
 // Run: node scripts/build-lib.ts
 import { execSync } from "node:child_process"
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs"
@@ -52,7 +52,7 @@ const shadcnCss = read("node_modules/shadcn/dist/tailwind.css")
 writeFileSync(
   root + "dist/styles.css",
   [
-    `/* @botspacehq/kit ${JSON.parse(read("package.json")).version}. Import after "tailwindcss". */`,
+    `/* @botspace/kit ${JSON.parse(read("package.json")).version}. Import after "tailwindcss". */`,
     `@import "tw-animate-css";`,
     "",
     `/* ---- shadcn ${version} base (shadcn/tailwind.css, MIT) ---- */`,
