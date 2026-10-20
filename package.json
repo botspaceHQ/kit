@@ -1,6 +1,6 @@
 {
   "name": "@botspace/kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "BotSpace Kit: stock shadcn/ui (base-nova, Base UI) primitives, the BotSpace theme and the kit blocks for the BotSpace dashboard.",
   "license": "UNLICENSED",
   "repository": {

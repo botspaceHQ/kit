@@ -62,7 +62,7 @@ node scripts/consumer-test.ts
 3. Add the theme: `npx shadcn@latest add @botspace/theme`.
 4. Add parts: `npx shadcn@latest add @botspace/frame @botspace/data-table`.
 
-Until kit.bot.space is live, serve `public/` on a local port and point the registry URL at it.
+For a local test of registry changes, serve `public/` on a local port and point the registry URL at it.
 
 ## Change the kit
 

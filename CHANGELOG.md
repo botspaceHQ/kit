@@ -8,6 +8,13 @@ All changes to `@botspace/kit` are in this file. The kit follows [semantic versi
 
 While the kit is at 0.x, apps pin an exact version.
 
+## 0.1.1 (21 Oct 2026)
+
+No change to components or styles.
+
+- Releases publish with npm trusted publishing (OIDC). The release workflow uses no npm token.
+- README: kit.bot.space is live.
+
 ## 0.1.0 (21 Oct 2026)
 
 The first release.
